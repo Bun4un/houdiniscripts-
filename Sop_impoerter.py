@@ -22,7 +22,11 @@ else:
             matlib_node.setName(f"{current_node.name()}_material")
             matlib_node.setPosition((x, y - 1.5))
             matlib_node.setInput(0, sopimport_node)
-            
+
+            #initialize shader node
+            mtlxstandard_surface_node = matlib_node.createNode('mtlxstandard_surface')
+            mtlxstandard_surface_node.setName(f"{current_node.name()}_shader")
+            matlib_node.parm('matnode1').set(mtlxstandard_surface_node.path())
             y += 1.5
             x -= 1.5
 
