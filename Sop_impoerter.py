@@ -29,6 +29,8 @@ else:
         elif current_node.type().name() == 'cam' and not once_create:
             sceneimport_node = root_dir.createNode('sceneimport::2.0')
             sceneimport_node.setName('cameras')
+            sceneimport_node.parm('objects').set("*")
+            sceneimport_node.parm('filter').set('Cameras')
             sceneimport_node.setPosition((x, y))  
             x -= 1.5
             once_create = True
